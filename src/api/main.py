@@ -1,7 +1,7 @@
 from typing import Tuple, Union
 from typing import List
 import numpy as np
-from fastapi import FastAPI,HTTPException
+from fastapi import FastAPI, HTTPException
 from PIL import Image
 import numpy as np
 import boto3
@@ -35,8 +35,8 @@ def rle_decode(mask_rle: str):
         for lo, hi in zip(starts, ends):
             img[lo:hi] = 1
     except:
-        return "The input run-length string cannot be decode"
-    return print(img.reshape(shape))
+        return {"Error Messages: ": "The input run-length string cannot be decode"}
+    return {"Image Pixel Array: ": img.reshape(shape)}
 
 @app.get("/image_number_of_ships/{num}")
 def image_num_ships(num: int):
@@ -62,13 +62,13 @@ def image_num_ships(num: int):
     m = max(unique_img_ids['ships'])
     # Error handling
     if num < 0 or num > m or type(num) != int:
-        return "Error! " + str(num) + " is not an integer between 0-" + str(m) + "."
+        return {"Error Messages: ": "Error! " + str(num) + " is not an integer between 0-" + str(m) + "."}
     # count the results
     count = 0
     for i in unique_img_ids['ships']:
         if i == num:
             count += 1
-    return count
+    return {"Number of Images: ": count}
 
 
 
@@ -118,12 +118,12 @@ def search_ship(t: str):
         try:
             img_obj = client.get_object(Bucket = bucket_name, Key = object_key_img)
         except botocore.exceptions.ClientError:
-            return "No such key! Please enter a valid image name!"
+            return {"Error Messages: ": "No such key! Please enter a valid image name!"}
         body = img_obj['Body']
         img = Image.open(body)
         # create the numpy arrry of the image
         image_array = np.array(img.getdata()).reshape(img.size[0], img.size[1], 3)
-        return print(image_array)
+        return {"Image Pixel Array: ": image_array}
 
     # Error handling
     if t == "ship":
@@ -133,4 +133,33 @@ def search_ship(t: str):
         return readImage_S3(noships[ran_noships])
 
     else:
-        return "Please type in 'ship' or 'noship'."
+        return {"Error Messages: ": "Please type in 'ship' or 'noship'."}
+
+
+
+@app.get("/readImage_S/{ImageId}")
+def readImage_S3(ImageId: str):
+        '''
+        This function's purpose is to read the image from AWS S3 Bucket to the memory.
+        Input: Any image file name in the dataset.
+        Output: The numpy array of the image pixles.
+        '''
+
+        # AWS Credentials
+        aws_key_id = 'AKIA2ZQ35MMOGV7ZZ7PA'
+        aws_key = 'BrLIKkkVD+kdOQRz4TLp70K0YXZNaBHt6NVcfF2k'
+        bucket_name = 'airbus-detection-team-1-re'
+        object_key_img = 'assignment-1/train_v2/' + ImageId
+
+        # Error handling
+        client = boto3.client('s3', aws_access_key_id = aws_key_id,
+            aws_secret_access_key = aws_key)
+        try:
+            img_obj = client.get_object(Bucket = bucket_name, Key = object_key_img)
+        except botocore.exceptions.ClientError:
+            return {"Error Messages: ": "No such key! Please enter a valid image name!"}
+        body = img_obj['Body']
+        img = Image.open(body)
+        # create the numpy arrry of the image
+        image_array = np.array(img.getdata()).reshape(img.size[0], img.size[1], 3)
+        return {"Image Pixel Array: ": image_array}
