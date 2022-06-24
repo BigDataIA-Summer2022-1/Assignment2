@@ -1,8 +1,8 @@
-from typing import Tuple, Union
-from typing import List
-from matplotlib.font_manager import json_load
+import pathlib
+import string
+import time
 import numpy as np
-from fastapi import FastAPI, HTTPException
+from fastapi import FastAPI, Request
 from PIL import Image
 import numpy as np
 import boto3
@@ -12,11 +12,34 @@ from PIL import Image
 import boto3
 from io import StringIO
 import botocore
-from matplotlib import pyplot as plt
 import random
 import json
+import logging
+import logging.config
+import logging.handlers
+from fastapi import FastAPI
+import uvicorn
+
+
+logging.config.fileConfig('logging.conf', disable_existing_loggers=False)
+
+logger = logging.getLogger(__name__)
 
 app = FastAPI()
+
+@app.middleware("http")
+async def log_requests(request: Request, call_next):
+    idem = ''.join(random.choices(string.ascii_uppercase + string.digits, k=6))
+    logger.info(f"rid={idem} start request path={request.url.path}")
+    start_time = time.time()
+    
+    response = await call_next(request)
+    
+    process_time = (time.time() - start_time) * 1000
+    formatted_process_time = '{0:.2f}'.format(process_time)
+    logger.info(f"rid={idem} completed_in={formatted_process_time}ms status_code={response.status_code}")
+    
+    return response
 
 
 @app.get("/run_length_decode/{mask_rle}")
@@ -169,38 +192,6 @@ def readImage_S3(ImageId: str):
 
 
 
-@app.get("/run_length_encode/{ImageId}") # this one still need adjustment, probably is not imageid!!
-def rle_encode(ImageId: str):
-    '''
-    Input: ImageId: image file name
-    Return: run length encoding as string formated
-    '''
-
-    # AWS Credentials
-    aws_key_id = 'AKIA2ZQ35MMOGV7ZZ7PA'
-    aws_key = 'BrLIKkkVD+kdOQRz4TLp70K0YXZNaBHt6NVcfF2k'
-    bucket_name = 'airbus-detection-team-1-re'
-    object_key_img = 'assignment-1/train_v2/' + ImageId
-
-    # Error handling
-    try:
-        client = boto3.client('s3', aws_access_key_id = aws_key_id,
-            aws_secret_access_key = aws_key)
-    except:
-        return {"Error Messages: ": "No such key! Please enter a valid image name!" }
-    img_obj = client.get_object(Bucket = bucket_name, Key = object_key_img)
-    body = img_obj['Body']
-    img = Image.open(body)
-    # create the numpy arrry of the image
-    image_array = np.array(img.getdata()).reshape(img.size[0], img.size[1], 3)
-
-    pixels = image_array.flatten()
-    pixels = np.concatenate([[0], pixels, [0]])
-    runs = np.where(pixels[1:] != pixels[:-1])[0] + 1
-    runs[1::2] -= runs[::2]
-    return {"String Formated RLE: ": str(' '.join(str(x) for x in runs))}
-
-
 
 @app.get("/image_and_masks/{ImageId}")
 def img_and_masks(ImageId: str):
@@ -277,3 +268,8 @@ def img_and_masks(ImageId: str):
     #plt.tight_layout(h_pad=0.1, w_pad=0.1)
     #plt.show()
     return {"Image Pixel Array:":str(image_array), "Image Mask Array:":str(all_masks)}
+
+
+if __name__ == "__main__":
+    cwd = pathlib.Path(__file__).parent.resolve()
+    uvicorn.run(app, host="127.0.0.1", port=4000, log_config=f"{cwd}/logging.conf")
