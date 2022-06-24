@@ -45,9 +45,9 @@ async def log_requests(request: Request, call_next):
 @app.get("/run_length_decode/{mask_rle}")
 def rle_decode(mask_rle: str):
     '''
+    The function's putpose is to decode the run length encoded pixels to a mask numpy array. 
     Input: mask_rle: run-length as string formated (start length)
-    shape: (height,width) of array to return 
-    Returns numpy array, 1 - mask, 0 - background
+    Returns the mask numpy array, 1 - mask, 0 - background
     '''
     shape = [768, 768]
     try:
@@ -66,8 +66,10 @@ def rle_decode(mask_rle: str):
 
 @app.get("/image_number_of_ships/{num}")
 def image_num_ships(num: int):
-    # input: An integer: number of ships in an image.
-    # output: How many images in our dataset with this certain number of ships. Or Error.
+    '''
+    Input: An integer: number of ships in an image.
+    Output: How many images in our dataset has this certain number of ships. Or Error.
+    '''
 
     # AWS Credentials
     aws_key_id = 'AKIA2ZQ35MMOGV7ZZ7PA'
@@ -101,7 +103,7 @@ def image_num_ships(num: int):
 @app.get("/ship_nonship_image/{t}")
 def search_ship(t: str):
     '''
-    Input: type: A string 'ship' or 'noship'
+    Input: t: A string 'ship' or 'noship'. 
     Output: One of the images' name with ship(s) or noship in our dataset if input is 'ship' or 'noship', respectively.
     '''
 
@@ -165,30 +167,30 @@ def search_ship(t: str):
 
 @app.get("/readImage_S3/{ImageId}")
 def readImage_S3(ImageId: str):
-        '''
-        This function's purpose is to read the image from AWS S3 Bucket to the memory.
-        Input: Any image file name in the dataset.
-        Output: The numpy array of the image pixles.
-        '''
+    '''
+    This function's purpose is to read the image from AWS S3 Bucket to the memory.
+    Input: Any image file name in the dataset.
+    Output: The numpy array of the image pixles.
+    '''
 
-        # AWS Credentials
-        aws_key_id = 'AKIA2ZQ35MMOGV7ZZ7PA'
-        aws_key = 'BrLIKkkVD+kdOQRz4TLp70K0YXZNaBHt6NVcfF2k'
-        bucket_name = 'airbus-detection-team-1-re'
-        object_key_img = 'assignment-1/train_v2/' + ImageId
+    # AWS Credentials
+    aws_key_id = 'AKIA2ZQ35MMOGV7ZZ7PA'
+    aws_key = 'BrLIKkkVD+kdOQRz4TLp70K0YXZNaBHt6NVcfF2k'
+    bucket_name = 'airbus-detection-team-1-re'
+    object_key_img = 'assignment-1/train_v2/' + ImageId
 
-        # Error handling
-        client = boto3.client('s3', aws_access_key_id = aws_key_id,
-            aws_secret_access_key = aws_key)
-        try:
-            img_obj = client.get_object(Bucket = bucket_name, Key = object_key_img)
-        except botocore.exceptions.ClientError:
-            return {"Error Messages: ": "No such key! Please enter a valid image name!"}
-        body = img_obj['Body']
-        img = Image.open(body)
-        # create the numpy arrry of the image
-        image_array = np.array(img.getdata()).reshape(img.size[0], img.size[1], 3)
-        return {"Image Pixel Array: ": str(image_array)}
+    # Error handling
+    client = boto3.client('s3', aws_access_key_id = aws_key_id,
+        aws_secret_access_key = aws_key)
+    try:
+        img_obj = client.get_object(Bucket = bucket_name, Key = object_key_img)
+    except botocore.exceptions.ClientError:
+        return {"Error Messages: ": "No such key! Please enter a valid image name!"}
+    body = img_obj['Body']
+    img = Image.open(body)
+    # create the numpy arrry of the image
+    image_array = np.array(img.getdata()).reshape(img.size[0], img.size[1], 3)
+    return {"Image Pixel Array: ": str(image_array)}
 
 
 
@@ -196,7 +198,7 @@ def readImage_S3(ImageId: str):
 @app.get("/image_and_masks/{ImageId}")
 def img_and_masks(ImageId: str):
     ''' 
-    Input: ImageId : A string that contains the file name of the image in dataset; ImgShape was set to default as 768 by 768
+    Input: ImageId : Any image file name in the dataset; ImgShape was set to default as 768 by 768
     Return: img: a numpy array represents the original image, all_masks: a numpy array represents the mask of the image
     If the name of the iamge file is invalid, return "No such key! Please enter a valid image name!"
     '''
@@ -274,7 +276,7 @@ def img_and_masks(ImageId: str):
 def num_ship_in_image(ImageId: str):
     
     ''' 
-    Input: ImageId : A string that contains the file name of the image in dataset.
+    Input: ImageId : Any image file name in the dataset.
     Return: an integer represents how many ships are there in this image.
     If the name of the iamge file is invalid, return "No such key! Please enter a valid image name!"
     '''

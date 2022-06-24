@@ -1,0 +1,172 @@
+2022-06-24 18:12:43,886 loglevel=INFO   logger=uvicorn.error serve() L75   Started server process [8232]
+2022-06-24 18:12:43,886 loglevel=INFO   logger=uvicorn.error startup() L45   Waiting for application startup.
+2022-06-24 18:12:43,887 loglevel=INFO   logger=uvicorn.error startup() L59   Application startup complete.
+2022-06-24 18:12:59,422 loglevel=INFO   logger=main log_requests() L33   rid=6FF0Z0 start request path=/docs
+2022-06-24 18:12:59,423 loglevel=INFO   logger=main log_requests() L40   rid=6FF0Z0 completed_in=0.00ms status_code=200
+2022-06-24 18:12:59,545 loglevel=INFO   logger=main log_requests() L33   rid=HC0T3O start request path=/openapi.json
+2022-06-24 18:12:59,550 loglevel=INFO   logger=main log_requests() L40   rid=HC0T3O completed_in=3.99ms status_code=200
+2022-06-24 18:14:26,122 loglevel=INFO   logger=main log_requests() L33   rid=NGR670 start request path=/num_ship_iamge/0a1a2b14e.jpg
+2022-06-24 18:14:29,593 loglevel=INFO   logger=main log_requests() L40   rid=NGR670 completed_in=3470.95ms status_code=200
+2022-06-24 18:17:38,113 loglevel=INFO   logger=main log_requests() L33   rid=CANJJ5 start request path=/image_and_masks/000155de5.jpg
+2022-06-24 18:17:42,027 loglevel=INFO   logger=main log_requests() L40   rid=CANJJ5 completed_in=3913.84ms status_code=200
+2022-06-24 18:18:52,425 loglevel=INFO   logger=main log_requests() L33   rid=6213VN start request path=/image_and_masks/123
+2022-06-24 18:18:52,551 loglevel=INFO   logger=main log_requests() L40   rid=6213VN completed_in=125.88ms status_code=200
+2022-06-24 18:22:15,958 loglevel=INFO   logger=main log_requests() L33   rid=T5BDBB start request path=/run_length_decode/477152 1 477919 3 478686 5 479453 7 480222 7 480991 7 481760 7 482530 6 483299 4 484068 3 484837 1
+2022-06-24 18:22:15,960 loglevel=INFO   logger=main log_requests() L40   rid=T5BDBB completed_in=0.99ms status_code=200
+2022-06-24 18:22:52,057 loglevel=INFO   logger=main log_requests() L33   rid=3OOUE8 start request path=/run_length_decode/123
+2022-06-24 18:22:52,058 loglevel=INFO   logger=main log_requests() L40   rid=3OOUE8 completed_in=1.00ms status_code=200
+2022-06-24 18:22:59,780 loglevel=INFO   logger=main log_requests() L33   rid=O9TAJM start request path=/run_length_decode/abc
+2022-06-24 18:22:59,781 loglevel=INFO   logger=main log_requests() L40   rid=O9TAJM completed_in=1.00ms status_code=200
+2022-06-24 18:25:20,573 loglevel=INFO   logger=main log_requests() L33   rid=GXDXBQ start request path=/ship_nonship_image/ship
+2022-06-24 18:25:23,846 loglevel=INFO   logger=main log_requests() L40   rid=GXDXBQ completed_in=3271.89ms status_code=200
+2022-06-24 18:26:16,013 loglevel=INFO   logger=main log_requests() L33   rid=5W0G4B start request path=/ship_nonship_image/123
+2022-06-24 18:26:18,861 loglevel=INFO   logger=main log_requests() L40   rid=5W0G4B completed_in=2847.86ms status_code=200
+2022-06-24 18:27:10,415 loglevel=INFO   logger=uvicorn.error serve() L75   Started server process [25456]
+2022-06-24 18:27:10,416 loglevel=INFO   logger=uvicorn.error startup() L45   Waiting for application startup.
+2022-06-24 18:27:10,417 loglevel=INFO   logger=uvicorn.error startup() L59   Application startup complete.
+2022-06-24 18:27:32,478 loglevel=INFO   logger=uvicorn.error serve() L75   Started server process [6400]
+2022-06-24 18:27:32,479 loglevel=INFO   logger=uvicorn.error startup() L45   Waiting for application startup.
+2022-06-24 18:27:32,479 loglevel=INFO   logger=uvicorn.error startup() L59   Application startup complete.
+2022-06-24 18:27:42,553 loglevel=INFO   logger=uvicorn.error serve() L75   Started server process [13612]
+2022-06-24 18:27:42,554 loglevel=INFO   logger=uvicorn.error startup() L45   Waiting for application startup.
+2022-06-24 18:27:42,555 loglevel=INFO   logger=uvicorn.error startup() L59   Application startup complete.
+2022-06-24 18:28:26,117 loglevel=INFO   logger=main log_requests() L33   rid=PI64XG start request path=/docs
+2022-06-24 18:28:26,117 loglevel=INFO   logger=main log_requests() L40   rid=PI64XG completed_in=0.00ms status_code=200
+2022-06-24 18:28:26,226 loglevel=INFO   logger=main log_requests() L33   rid=3UIKAX start request path=/openapi.json
+2022-06-24 18:28:26,231 loglevel=INFO   logger=main log_requests() L40   rid=3UIKAX completed_in=3.99ms status_code=200
+2022-06-24 18:28:54,083 loglevel=INFO   logger=uvicorn.error serve() L75   Started server process [19576]
+2022-06-24 18:28:54,084 loglevel=INFO   logger=uvicorn.error startup() L45   Waiting for application startup.
+2022-06-24 18:28:54,085 loglevel=INFO   logger=uvicorn.error startup() L59   Application startup complete.
+2022-06-24 18:32:36,280 loglevel=INFO   logger=main log_requests() L33   rid=O3LF32 start request path=/image_number_of_ships/6
+2022-06-24 18:32:39,380 loglevel=INFO   logger=main log_requests() L40   rid=O3LF32 completed_in=3099.20ms status_code=200
+2022-06-24 18:33:09,982 loglevel=INFO   logger=main log_requests() L33   rid=VY14BO start request path=/image_number_of_ships/25
+2022-06-24 18:33:12,836 loglevel=INFO   logger=main log_requests() L40   rid=VY14BO completed_in=2853.44ms status_code=200
+2022-06-24 18:36:33,897 loglevel=INFO   logger=main log_requests() L33   rid=HZ3X49 start request path=/readImage_S3/0a0eeaaf7.jpg
+2022-06-24 18:36:34,494 loglevel=INFO   logger=main log_requests() L40   rid=HZ3X49 completed_in=596.36ms status_code=200
+2022-06-24 18:36:51,596 loglevel=INFO   logger=main log_requests() L33   rid=R0FUG3 start request path=/readImage_S3/abc123
+2022-06-24 18:36:51,751 loglevel=INFO   logger=main log_requests() L40   rid=R0FUG3 completed_in=155.10ms status_code=200
+2022-06-24 18:42:26,721 loglevel=INFO   logger=main log_requests() L33   rid=R0536M start request path=/num_ship_image/0a2e15e29.jpg
+2022-06-24 18:42:32,630 loglevel=INFO   logger=main log_requests() L40   rid=R0536M completed_in=5907.96ms status_code=200
+2022-06-24 18:43:03,160 loglevel=INFO   logger=main log_requests() L33   rid=CLS4T5 start request path=/num_ship_image/123
+2022-06-24 18:43:03,259 loglevel=INFO   logger=main log_requests() L40   rid=CLS4T5 completed_in=99.01ms status_code=200
+2022-06-24 18:46:27,772 loglevel=INFO   logger=uvicorn.error serve() L75   Started server process [9688]
+2022-06-24 18:46:27,773 loglevel=INFO   logger=uvicorn.error startup() L45   Waiting for application startup.
+2022-06-24 18:46:27,773 loglevel=INFO   logger=uvicorn.error startup() L59   Application startup complete.
+2022-06-24 18:46:29,870 loglevel=INFO   logger=uvicorn.error serve() L75   Started server process [21008]
+2022-06-24 18:46:29,870 loglevel=INFO   logger=uvicorn.error startup() L45   Waiting for application startup.
+2022-06-24 18:46:29,871 loglevel=INFO   logger=uvicorn.error startup() L59   Application startup complete.
+2022-06-24 18:46:33,055 loglevel=INFO   logger=uvicorn.error serve() L75   Started server process [21492]
+2022-06-24 18:46:33,055 loglevel=INFO   logger=uvicorn.error startup() L45   Waiting for application startup.
+2022-06-24 18:46:33,056 loglevel=INFO   logger=uvicorn.error startup() L59   Application startup complete.
+2022-06-24 18:46:47,343 loglevel=INFO   logger=uvicorn.error serve() L75   Started server process [24052]
+2022-06-24 18:46:47,344 loglevel=INFO   logger=uvicorn.error startup() L45   Waiting for application startup.
+2022-06-24 18:46:47,344 loglevel=INFO   logger=uvicorn.error startup() L59   Application startup complete.
+2022-06-24 18:46:52,248 loglevel=INFO   logger=uvicorn.error serve() L75   Started server process [7076]
+2022-06-24 18:46:52,248 loglevel=INFO   logger=uvicorn.error startup() L45   Waiting for application startup.
+2022-06-24 18:46:52,248 loglevel=INFO   logger=uvicorn.error startup() L59   Application startup complete.
+2022-06-24 18:47:50,414 loglevel=INFO   logger=uvicorn.error serve() L75   Started server process [23728]
+2022-06-24 18:47:50,415 loglevel=INFO   logger=uvicorn.error startup() L45   Waiting for application startup.
+2022-06-24 18:47:50,415 loglevel=INFO   logger=uvicorn.error startup() L59   Application startup complete.
+2022-06-24 18:47:51,415 loglevel=INFO   logger=uvicorn.error serve() L75   Started server process [13280]
+2022-06-24 18:47:51,416 loglevel=INFO   logger=uvicorn.error startup() L45   Waiting for application startup.
+2022-06-24 18:47:51,416 loglevel=INFO   logger=uvicorn.error startup() L59   Application startup complete.
+2022-06-24 18:48:15,713 loglevel=INFO   logger=uvicorn.error serve() L75   Started server process [22220]
+2022-06-24 18:48:15,714 loglevel=INFO   logger=uvicorn.error startup() L45   Waiting for application startup.
+2022-06-24 18:48:15,714 loglevel=INFO   logger=uvicorn.error startup() L59   Application startup complete.
+2022-06-24 18:48:18,053 loglevel=INFO   logger=uvicorn.error serve() L75   Started server process [3256]
+2022-06-24 18:48:18,054 loglevel=INFO   logger=uvicorn.error startup() L45   Waiting for application startup.
+2022-06-24 18:48:18,054 loglevel=INFO   logger=uvicorn.error startup() L59   Application startup complete.
+2022-06-24 18:49:02,023 loglevel=INFO   logger=uvicorn.error serve() L75   Started server process [21092]
+2022-06-24 18:49:02,023 loglevel=INFO   logger=uvicorn.error startup() L45   Waiting for application startup.
+2022-06-24 18:49:02,023 loglevel=INFO   logger=uvicorn.error startup() L59   Application startup complete.
+2022-06-24 18:49:08,471 loglevel=INFO   logger=main log_requests() L33   rid=0S3UP3 start request path=/docs
+2022-06-24 18:49:08,472 loglevel=INFO   logger=main log_requests() L40   rid=0S3UP3 completed_in=0.00ms status_code=200
+2022-06-24 18:49:08,588 loglevel=INFO   logger=main log_requests() L33   rid=PMK219 start request path=/openapi.json
+2022-06-24 18:49:08,593 loglevel=INFO   logger=main log_requests() L40   rid=PMK219 completed_in=5.02ms status_code=200
+2022-06-24 18:49:54,368 loglevel=INFO   logger=uvicorn.error serve() L75   Started server process [20640]
+2022-06-24 18:49:54,369 loglevel=INFO   logger=uvicorn.error startup() L45   Waiting for application startup.
+2022-06-24 18:49:54,369 loglevel=INFO   logger=uvicorn.error startup() L59   Application startup complete.
+2022-06-24 18:50:12,121 loglevel=INFO   logger=uvicorn.error serve() L75   Started server process [6020]
+2022-06-24 18:50:12,122 loglevel=INFO   logger=uvicorn.error startup() L45   Waiting for application startup.
+2022-06-24 18:50:12,122 loglevel=INFO   logger=uvicorn.error startup() L59   Application startup complete.
+2022-06-24 18:50:36,807 loglevel=INFO   logger=uvicorn.error serve() L75   Started server process [23724]
+2022-06-24 18:50:36,807 loglevel=INFO   logger=uvicorn.error startup() L45   Waiting for application startup.
+2022-06-24 18:50:36,808 loglevel=INFO   logger=uvicorn.error startup() L59   Application startup complete.
+2022-06-24 18:50:38,900 loglevel=INFO   logger=uvicorn.error serve() L75   Started server process [20492]
+2022-06-24 18:50:38,901 loglevel=INFO   logger=uvicorn.error startup() L45   Waiting for application startup.
+2022-06-24 18:50:38,901 loglevel=INFO   logger=uvicorn.error startup() L59   Application startup complete.
+2022-06-24 18:50:58,325 loglevel=INFO   logger=uvicorn.error serve() L75   Started server process [19460]
+2022-06-24 18:50:58,325 loglevel=INFO   logger=uvicorn.error startup() L45   Waiting for application startup.
+2022-06-24 18:50:58,326 loglevel=INFO   logger=uvicorn.error startup() L59   Application startup complete.
+2022-06-24 18:51:01,935 loglevel=INFO   logger=uvicorn.error serve() L75   Started server process [6632]
+2022-06-24 18:51:01,936 loglevel=INFO   logger=uvicorn.error startup() L45   Waiting for application startup.
+2022-06-24 18:51:01,936 loglevel=INFO   logger=uvicorn.error startup() L59   Application startup complete.
+2022-06-24 18:51:07,346 loglevel=INFO   logger=uvicorn.error serve() L75   Started server process [20368]
+2022-06-24 18:51:07,347 loglevel=INFO   logger=uvicorn.error startup() L45   Waiting for application startup.
+2022-06-24 18:51:07,347 loglevel=INFO   logger=uvicorn.error startup() L59   Application startup complete.
+2022-06-24 18:51:17,673 loglevel=INFO   logger=uvicorn.error serve() L75   Started server process [24452]
+2022-06-24 18:51:17,674 loglevel=INFO   logger=uvicorn.error startup() L45   Waiting for application startup.
+2022-06-24 18:51:17,675 loglevel=INFO   logger=uvicorn.error startup() L59   Application startup complete.
+2022-06-24 18:51:20,707 loglevel=INFO   logger=uvicorn.error serve() L75   Started server process [11624]
+2022-06-24 18:51:20,708 loglevel=INFO   logger=uvicorn.error startup() L45   Waiting for application startup.
+2022-06-24 18:51:20,708 loglevel=INFO   logger=uvicorn.error startup() L59   Application startup complete.
+2022-06-24 18:51:22,751 loglevel=INFO   logger=uvicorn.error serve() L75   Started server process [23364]
+2022-06-24 18:51:22,752 loglevel=INFO   logger=uvicorn.error startup() L45   Waiting for application startup.
+2022-06-24 18:51:22,752 loglevel=INFO   logger=uvicorn.error startup() L59   Application startup complete.
+2022-06-24 18:51:32,906 loglevel=INFO   logger=uvicorn.error serve() L75   Started server process [16568]
+2022-06-24 18:51:32,907 loglevel=INFO   logger=uvicorn.error startup() L45   Waiting for application startup.
+2022-06-24 18:51:32,908 loglevel=INFO   logger=uvicorn.error startup() L59   Application startup complete.
+2022-06-24 18:51:35,774 loglevel=INFO   logger=uvicorn.error serve() L75   Started server process [19992]
+2022-06-24 18:51:35,775 loglevel=INFO   logger=uvicorn.error startup() L45   Waiting for application startup.
+2022-06-24 18:51:35,776 loglevel=INFO   logger=uvicorn.error startup() L59   Application startup complete.
+2022-06-24 18:51:37,597 loglevel=INFO   logger=uvicorn.error serve() L75   Started server process [13568]
+2022-06-24 18:51:37,598 loglevel=INFO   logger=uvicorn.error startup() L45   Waiting for application startup.
+2022-06-24 18:51:37,598 loglevel=INFO   logger=uvicorn.error startup() L59   Application startup complete.
+2022-06-24 18:51:38,860 loglevel=INFO   logger=uvicorn.error serve() L75   Started server process [11712]
+2022-06-24 18:51:38,861 loglevel=INFO   logger=uvicorn.error startup() L45   Waiting for application startup.
+2022-06-24 18:51:38,862 loglevel=INFO   logger=uvicorn.error startup() L59   Application startup complete.
+2022-06-24 18:52:15,534 loglevel=INFO   logger=uvicorn.error serve() L75   Started server process [19500]
+2022-06-24 18:52:15,535 loglevel=INFO   logger=uvicorn.error startup() L45   Waiting for application startup.
+2022-06-24 18:52:15,536 loglevel=INFO   logger=uvicorn.error startup() L59   Application startup complete.
+2022-06-24 18:53:00,093 loglevel=INFO   logger=uvicorn.error serve() L75   Started server process [3776]
+2022-06-24 18:53:00,094 loglevel=INFO   logger=uvicorn.error startup() L45   Waiting for application startup.
+2022-06-24 18:53:00,095 loglevel=INFO   logger=uvicorn.error startup() L59   Application startup complete.
+2022-06-24 18:53:02,696 loglevel=INFO   logger=uvicorn.error serve() L75   Started server process [17848]
+2022-06-24 18:53:02,697 loglevel=INFO   logger=uvicorn.error startup() L45   Waiting for application startup.
+2022-06-24 18:53:02,697 loglevel=INFO   logger=uvicorn.error startup() L59   Application startup complete.
+2022-06-24 18:53:37,818 loglevel=INFO   logger=uvicorn.error serve() L75   Started server process [7088]
+2022-06-24 18:53:37,818 loglevel=INFO   logger=uvicorn.error startup() L45   Waiting for application startup.
+2022-06-24 18:53:37,819 loglevel=INFO   logger=uvicorn.error startup() L59   Application startup complete.
+2022-06-24 18:53:43,563 loglevel=INFO   logger=main log_requests() L33   rid=1P65ZR start request path=/docs
+2022-06-24 18:53:43,564 loglevel=INFO   logger=main log_requests() L40   rid=1P65ZR completed_in=0.00ms status_code=200
+2022-06-24 18:53:43,670 loglevel=INFO   logger=main log_requests() L33   rid=7M84GW start request path=/openapi.json
+2022-06-24 18:53:43,674 loglevel=INFO   logger=main log_requests() L40   rid=7M84GW completed_in=2.99ms status_code=200
+2022-06-24 18:54:05,033 loglevel=INFO   logger=uvicorn.error serve() L75   Started server process [10488]
+2022-06-24 18:54:05,034 loglevel=INFO   logger=uvicorn.error startup() L45   Waiting for application startup.
+2022-06-24 18:54:05,035 loglevel=INFO   logger=uvicorn.error startup() L59   Application startup complete.
+2022-06-24 18:54:07,296 loglevel=INFO   logger=uvicorn.error serve() L75   Started server process [20080]
+2022-06-24 18:54:07,296 loglevel=INFO   logger=uvicorn.error startup() L45   Waiting for application startup.
+2022-06-24 18:54:07,297 loglevel=INFO   logger=uvicorn.error startup() L59   Application startup complete.
+2022-06-24 18:54:11,162 loglevel=INFO   logger=main log_requests() L33   rid=5C6OXC start request path=/docs
+2022-06-24 18:54:11,163 loglevel=INFO   logger=main log_requests() L40   rid=5C6OXC completed_in=0.00ms status_code=200
+2022-06-24 18:54:11,278 loglevel=INFO   logger=main log_requests() L33   rid=BM1IRL start request path=/openapi.json
+2022-06-24 18:54:11,282 loglevel=INFO   logger=main log_requests() L40   rid=BM1IRL completed_in=2.99ms status_code=200
+2022-06-24 18:54:32,827 loglevel=INFO   logger=uvicorn.error serve() L75   Started server process [12284]
+2022-06-24 18:54:32,828 loglevel=INFO   logger=uvicorn.error startup() L45   Waiting for application startup.
+2022-06-24 18:54:32,828 loglevel=INFO   logger=uvicorn.error startup() L59   Application startup complete.
+2022-06-24 18:54:42,665 loglevel=INFO   logger=uvicorn.error serve() L75   Started server process [24420]
+2022-06-24 18:54:42,665 loglevel=INFO   logger=uvicorn.error startup() L45   Waiting for application startup.
+2022-06-24 18:54:42,666 loglevel=INFO   logger=uvicorn.error startup() L59   Application startup complete.
+2022-06-24 18:55:02,492 loglevel=INFO   logger=uvicorn.error serve() L75   Started server process [23788]
+2022-06-24 18:55:02,493 loglevel=INFO   logger=uvicorn.error startup() L45   Waiting for application startup.
+2022-06-24 18:55:02,494 loglevel=INFO   logger=uvicorn.error startup() L59   Application startup complete.
+2022-06-24 18:55:05,778 loglevel=INFO   logger=uvicorn.error serve() L75   Started server process [13164]
+2022-06-24 18:55:05,779 loglevel=INFO   logger=uvicorn.error startup() L45   Waiting for application startup.
+2022-06-24 18:55:05,779 loglevel=INFO   logger=uvicorn.error startup() L59   Application startup complete.
+2022-06-24 18:55:10,939 loglevel=INFO   logger=uvicorn.error serve() L75   Started server process [3292]
+2022-06-24 18:55:10,939 loglevel=INFO   logger=uvicorn.error startup() L45   Waiting for application startup.
+2022-06-24 18:55:10,940 loglevel=INFO   logger=uvicorn.error startup() L59   Application startup complete.
+2022-06-24 18:55:37,787 loglevel=INFO   logger=main log_requests() L33   rid=P04QNO start request path=/docs
+2022-06-24 18:55:37,788 loglevel=INFO   logger=main log_requests() L40   rid=P04QNO completed_in=1.00ms status_code=200
+2022-06-24 18:55:37,840 loglevel=INFO   logger=main log_requests() L33   rid=QODVDB start request path=/openapi.json
+2022-06-24 18:55:37,845 loglevel=INFO   logger=main log_requests() L40   rid=QODVDB completed_in=3.99ms status_code=200
