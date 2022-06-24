@@ -5,6 +5,7 @@ import findMasks
 import image_number_of_ships
 import ship_noship
 import readImageFromS3
+import num_ship_image
 
 # All functions test
 # decode test
@@ -65,6 +66,15 @@ def test_readImageFromS3(ImageId):
 @pytest.mark.parametrize('ImageId',[('123'), ('123.jpg')])
 def test_readImageFromS3(ImageId):
     assert readImageFromS3.readImage_S3(ImageId) == "No such key! Please enter a valid image name!"
+
+# num_ship_image test
+@pytest.mark.parametrize('ImageId',[('0a40de97d.jpg')])
+def test_num_ship_image(ImageId):
+    assert num_ship_image.num_ship_in_image(ImageId) == 5
+
+@pytest.mark.parametrize('ImageId',[('123'), ('123.jpg')])
+def test_num_ship_image(ImageId):
+    assert num_ship_image.num_ship_in_image(ImageId) == "No such key! Please enter a valid image name!"
 
 
 if __name__=='__main__':
