@@ -42,5 +42,3 @@ def num_ship_in_image(ImageId: str):
     res = np.array(res)
     res = int(res[0])
     return res
-
-print(num_ship_in_image('0a40de97d.jpg'))
