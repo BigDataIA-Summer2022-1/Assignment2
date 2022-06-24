@@ -270,7 +270,7 @@ def img_and_masks(ImageId: str):
     return {"Image Pixel Array:":str(image_array), "Image Mask Array:":str(all_masks)}
 
 
-@app.get("/num_ship_iamge/{ImageId}")
+@app.get("/num_ship_image/{ImageId}")
 def num_ship_in_image(ImageId: str):
     
     ''' 
