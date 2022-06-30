@@ -170,3 +170,459 @@
 2022-06-24 18:55:37,788 loglevel=INFO   logger=main log_requests() L40   rid=P04QNO completed_in=1.00ms status_code=200
 2022-06-24 18:55:37,840 loglevel=INFO   logger=main log_requests() L33   rid=QODVDB start request path=/openapi.json
 2022-06-24 18:55:37,845 loglevel=INFO   logger=main log_requests() L40   rid=QODVDB completed_in=3.99ms status_code=200
+2022-06-30 02:41:40,409 loglevel=INFO   logger=uvicorn.error serve() L75   Started server process [81679]
+2022-06-30 02:41:40,409 loglevel=INFO   logger=uvicorn.error startup() L45   Waiting for application startup.
+2022-06-30 02:41:40,410 loglevel=INFO   logger=uvicorn.error startup() L59   Application startup complete.
+2022-06-30 03:45:47,999 loglevel=INFO   logger=uvicorn.error serve() L75   Started server process [83435]
+2022-06-30 03:45:47,999 loglevel=INFO   logger=uvicorn.error startup() L45   Waiting for application startup.
+2022-06-30 03:45:48,003 loglevel=INFO   logger=uvicorn.error startup() L59   Application startup complete.
+2022-06-30 03:45:53,052 loglevel=INFO   logger=main log_requests() L89   rid=WYDRZ0 start request path=/
+2022-06-30 03:45:53,056 loglevel=INFO   logger=main log_requests() L96   rid=WYDRZ0 completed_in=2.54ms status_code=404
+2022-06-30 03:45:56,610 loglevel=INFO   logger=main log_requests() L89   rid=EPLPP8 start request path=/docs
+2022-06-30 03:45:56,621 loglevel=INFO   logger=main log_requests() L96   rid=EPLPP8 completed_in=9.99ms status_code=200
+2022-06-30 03:45:56,945 loglevel=INFO   logger=main log_requests() L89   rid=V5VCEQ start request path=/openapi.json
+2022-06-30 03:45:56,979 loglevel=INFO   logger=main log_requests() L96   rid=V5VCEQ completed_in=32.67ms status_code=200
+2022-06-30 03:46:25,361 loglevel=INFO   logger=main log_requests() L89   rid=H50816 start request path=/users/
+2022-06-30 03:46:25,704 loglevel=INFO   logger=main log_requests() L96   rid=H50816 completed_in=341.87ms status_code=200
+2022-06-30 03:47:12,426 loglevel=INFO   logger=main log_requests() L89   rid=XN0T07 start request path=/token
+2022-06-30 03:47:12,457 loglevel=ERROR  logger=uvicorn.error run_asgi() L369  Exception in ASGI application
+Traceback (most recent call last):
+  File "/Users/adinanibijiang/opt/anaconda3/lib/python3.8/site-packages/anyio/streams/memory.py", line 94, in receive
+    return self.receive_nowait()
+  File "/Users/adinanibijiang/opt/anaconda3/lib/python3.8/site-packages/anyio/streams/memory.py", line 89, in receive_nowait
+    raise WouldBlock
+anyio.WouldBlock
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/adinanibijiang/opt/anaconda3/lib/python3.8/site-packages/starlette/middleware/base.py", line 43, in call_next
+    message = await recv_stream.receive()
+  File "/Users/adinanibijiang/opt/anaconda3/lib/python3.8/site-packages/anyio/streams/memory.py", line 114, in receive
+    raise EndOfStream
+anyio.EndOfStream
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/adinanibijiang/opt/anaconda3/lib/python3.8/site-packages/uvicorn/protocols/http/h11_impl.py", line 366, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "/Users/adinanibijiang/opt/anaconda3/lib/python3.8/site-packages/uvicorn/middleware/proxy_headers.py", line 75, in __call__
+    return await self.app(scope, receive, send)
+  File "/Users/adinanibijiang/opt/anaconda3/lib/python3.8/site-packages/fastapi/applications.py", line 269, in __call__
+    await super().__call__(scope, receive, send)
+  File "/Users/adinanibijiang/opt/anaconda3/lib/python3.8/site-packages/starlette/applications.py", line 124, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/adinanibijiang/opt/anaconda3/lib/python3.8/site-packages/starlette/middleware/errors.py", line 184, in __call__
+    raise exc
+  File "/Users/adinanibijiang/opt/anaconda3/lib/python3.8/site-packages/starlette/middleware/errors.py", line 162, in __call__
+    await self.app(scope, receive, _send)
+  File "/Users/adinanibijiang/opt/anaconda3/lib/python3.8/site-packages/starlette/middleware/base.py", line 68, in __call__
+    response = await self.dispatch_func(request, call_next)
+  File "./main.py", line 92, in log_requests
+    response = await call_next(request)
+  File "/Users/adinanibijiang/opt/anaconda3/lib/python3.8/site-packages/starlette/middleware/base.py", line 46, in call_next
+    raise app_exc
+  File "/Users/adinanibijiang/opt/anaconda3/lib/python3.8/site-packages/starlette/middleware/base.py", line 36, in coro
+    await self.app(scope, request.receive, send_stream.send)
+  File "/Users/adinanibijiang/opt/anaconda3/lib/python3.8/site-packages/starlette/exceptions.py", line 93, in __call__
+    raise exc
+  File "/Users/adinanibijiang/opt/anaconda3/lib/python3.8/site-packages/starlette/exceptions.py", line 82, in __call__
+    await self.app(scope, receive, sender)
+  File "/Users/adinanibijiang/opt/anaconda3/lib/python3.8/site-packages/fastapi/middleware/asyncexitstack.py", line 21, in __call__
+    raise e
+  File "/Users/adinanibijiang/opt/anaconda3/lib/python3.8/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/Users/adinanibijiang/opt/anaconda3/lib/python3.8/site-packages/starlette/routing.py", line 670, in __call__
+    await route.handle(scope, receive, send)
+  File "/Users/adinanibijiang/opt/anaconda3/lib/python3.8/site-packages/starlette/routing.py", line 266, in handle
+    await self.app(scope, receive, send)
+  File "/Users/adinanibijiang/opt/anaconda3/lib/python3.8/site-packages/starlette/routing.py", line 65, in app
+    response = await func(request)
+  File "/Users/adinanibijiang/opt/anaconda3/lib/python3.8/site-packages/fastapi/routing.py", line 227, in app
+    raw_response = await run_endpoint_function(
+  File "/Users/adinanibijiang/opt/anaconda3/lib/python3.8/site-packages/fastapi/routing.py", line 160, in run_endpoint_function
+    return await dependant.call(**values)
+  File "./main.py", line 71, in generate_token
+    user = await services.authenticate_user(db,form_data.username, form_data.password)
+  File "./services.py", line 38, in authenticate_user
+    if not user_handler.verify_password(password, models.User.hashed_password):
+  File "./user.py", line 17, in verify_password
+    return self.pwd_context.verify(plain_password, hashed_password)
+  File "/Users/adinanibijiang/opt/anaconda3/lib/python3.8/site-packages/passlib/context.py", line 2343, in verify
+    record = self._get_or_identify_record(hash, scheme, category)
+  File "/Users/adinanibijiang/opt/anaconda3/lib/python3.8/site-packages/passlib/context.py", line 2031, in _get_or_identify_record
+    return self._identify_record(hash, category)
+  File "/Users/adinanibijiang/opt/anaconda3/lib/python3.8/site-packages/passlib/context.py", line 1122, in identify_record
+    raise ExpectedStringError(hash, "hash")
+TypeError: hash must be unicode or bytes, not sqlalchemy.orm.attributes.InstrumentedAttribute
+2022-06-30 03:55:17,491 loglevel=INFO   logger=uvicorn.error shutdown() L252  Shutting down
+2022-06-30 03:55:17,594 loglevel=INFO   logger=uvicorn.error shutdown() L64   Waiting for application shutdown.
+2022-06-30 03:55:17,596 loglevel=INFO   logger=uvicorn.error shutdown() L75   Application shutdown complete.
+2022-06-30 03:55:17,596 loglevel=INFO   logger=uvicorn.error serve() L85   Finished server process [83435]
+2022-06-30 03:55:20,236 loglevel=INFO   logger=uvicorn.error serve() L75   Started server process [83641]
+2022-06-30 03:55:20,236 loglevel=INFO   logger=uvicorn.error startup() L45   Waiting for application startup.
+2022-06-30 03:55:20,237 loglevel=INFO   logger=uvicorn.error startup() L59   Application startup complete.
+2022-06-30 03:55:27,922 loglevel=INFO   logger=main log_requests() L89   rid=MJK37A start request path=/docs
+2022-06-30 03:55:27,925 loglevel=INFO   logger=main log_requests() L96   rid=MJK37A completed_in=2.07ms status_code=200
+2022-06-30 03:55:28,132 loglevel=INFO   logger=main log_requests() L89   rid=4MZOXX start request path=/openapi.json
+2022-06-30 03:55:28,160 loglevel=INFO   logger=main log_requests() L96   rid=4MZOXX completed_in=27.89ms status_code=200
+2022-06-30 03:55:43,637 loglevel=INFO   logger=main log_requests() L89   rid=JT9146 start request path=/token
+2022-06-30 03:55:43,686 loglevel=ERROR  logger=uvicorn.error run_asgi() L369  Exception in ASGI application
+Traceback (most recent call last):
+  File "/Users/adinanibijiang/opt/anaconda3/lib/python3.8/site-packages/anyio/streams/memory.py", line 94, in receive
+    return self.receive_nowait()
+  File "/Users/adinanibijiang/opt/anaconda3/lib/python3.8/site-packages/anyio/streams/memory.py", line 89, in receive_nowait
+    raise WouldBlock
+anyio.WouldBlock
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/adinanibijiang/opt/anaconda3/lib/python3.8/site-packages/starlette/middleware/base.py", line 43, in call_next
+    message = await recv_stream.receive()
+  File "/Users/adinanibijiang/opt/anaconda3/lib/python3.8/site-packages/anyio/streams/memory.py", line 114, in receive
+    raise EndOfStream
+anyio.EndOfStream
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/adinanibijiang/opt/anaconda3/lib/python3.8/site-packages/uvicorn/protocols/http/h11_impl.py", line 366, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "/Users/adinanibijiang/opt/anaconda3/lib/python3.8/site-packages/uvicorn/middleware/proxy_headers.py", line 75, in __call__
+    return await self.app(scope, receive, send)
+  File "/Users/adinanibijiang/opt/anaconda3/lib/python3.8/site-packages/fastapi/applications.py", line 269, in __call__
+    await super().__call__(scope, receive, send)
+  File "/Users/adinanibijiang/opt/anaconda3/lib/python3.8/site-packages/starlette/applications.py", line 124, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/adinanibijiang/opt/anaconda3/lib/python3.8/site-packages/starlette/middleware/errors.py", line 184, in __call__
+    raise exc
+  File "/Users/adinanibijiang/opt/anaconda3/lib/python3.8/site-packages/starlette/middleware/errors.py", line 162, in __call__
+    await self.app(scope, receive, _send)
+  File "/Users/adinanibijiang/opt/anaconda3/lib/python3.8/site-packages/starlette/middleware/base.py", line 68, in __call__
+    response = await self.dispatch_func(request, call_next)
+  File "./main.py", line 92, in log_requests
+    response = await call_next(request)
+  File "/Users/adinanibijiang/opt/anaconda3/lib/python3.8/site-packages/starlette/middleware/base.py", line 46, in call_next
+    raise app_exc
+  File "/Users/adinanibijiang/opt/anaconda3/lib/python3.8/site-packages/starlette/middleware/base.py", line 36, in coro
+    await self.app(scope, request.receive, send_stream.send)
+  File "/Users/adinanibijiang/opt/anaconda3/lib/python3.8/site-packages/starlette/exceptions.py", line 93, in __call__
+    raise exc
+  File "/Users/adinanibijiang/opt/anaconda3/lib/python3.8/site-packages/starlette/exceptions.py", line 82, in __call__
+    await self.app(scope, receive, sender)
+  File "/Users/adinanibijiang/opt/anaconda3/lib/python3.8/site-packages/fastapi/middleware/asyncexitstack.py", line 21, in __call__
+    raise e
+  File "/Users/adinanibijiang/opt/anaconda3/lib/python3.8/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/Users/adinanibijiang/opt/anaconda3/lib/python3.8/site-packages/starlette/routing.py", line 670, in __call__
+    await route.handle(scope, receive, send)
+  File "/Users/adinanibijiang/opt/anaconda3/lib/python3.8/site-packages/starlette/routing.py", line 266, in handle
+    await self.app(scope, receive, send)
+  File "/Users/adinanibijiang/opt/anaconda3/lib/python3.8/site-packages/starlette/routing.py", line 65, in app
+    response = await func(request)
+  File "/Users/adinanibijiang/opt/anaconda3/lib/python3.8/site-packages/fastapi/routing.py", line 227, in app
+    raw_response = await run_endpoint_function(
+  File "/Users/adinanibijiang/opt/anaconda3/lib/python3.8/site-packages/fastapi/routing.py", line 160, in run_endpoint_function
+    return await dependant.call(**values)
+  File "./main.py", line 71, in generate_token
+    user = await services.authenticate_user(db,form_data.username, form_data.password)
+  File "./services.py", line 39, in authenticate_user
+    if not user_handler.verify_password(password, sha256_crypt.encrypt(models.User.hashed_password)):
+  File "/Users/adinanibijiang/opt/anaconda3/lib/python3.8/site-packages/passlib/utils/decor.py", line 191, in wrapper
+    return func(*args, **kwds)
+  File "/Users/adinanibijiang/opt/anaconda3/lib/python3.8/site-packages/passlib/ifc.py", line 154, in encrypt
+    return cls.hash(*args, **kwds)
+  File "/Users/adinanibijiang/opt/anaconda3/lib/python3.8/site-packages/passlib/utils/handlers.py", line 777, in hash
+    validate_secret(secret)
+  File "/Users/adinanibijiang/opt/anaconda3/lib/python3.8/site-packages/passlib/utils/handlers.py", line 122, in validate_secret
+    raise exc.ExpectedStringError(secret, "secret")
+TypeError: secret must be unicode or bytes, not sqlalchemy.orm.attributes.InstrumentedAttribute
+2022-06-30 03:57:53,567 loglevel=INFO   logger=uvicorn.error shutdown() L252  Shutting down
+2022-06-30 03:57:53,670 loglevel=INFO   logger=uvicorn.error shutdown() L64   Waiting for application shutdown.
+2022-06-30 03:57:53,671 loglevel=INFO   logger=uvicorn.error shutdown() L75   Application shutdown complete.
+2022-06-30 03:57:53,671 loglevel=INFO   logger=uvicorn.error serve() L85   Finished server process [83641]
+2022-06-30 03:57:55,831 loglevel=INFO   logger=uvicorn.error serve() L75   Started server process [83707]
+2022-06-30 03:57:55,831 loglevel=INFO   logger=uvicorn.error startup() L45   Waiting for application startup.
+2022-06-30 03:57:55,832 loglevel=INFO   logger=uvicorn.error startup() L59   Application startup complete.
+2022-06-30 03:58:00,706 loglevel=INFO   logger=main log_requests() L89   rid=Q5JUHU start request path=/docs
+2022-06-30 03:58:00,713 loglevel=INFO   logger=main log_requests() L96   rid=Q5JUHU completed_in=2.34ms status_code=200
+2022-06-30 03:58:00,926 loglevel=INFO   logger=main log_requests() L89   rid=52YKIN start request path=/openapi.json
+2022-06-30 03:58:00,957 loglevel=INFO   logger=main log_requests() L96   rid=52YKIN completed_in=30.72ms status_code=200
+2022-06-30 03:58:19,508 loglevel=INFO   logger=main log_requests() L89   rid=PS67XJ start request path=/token
+2022-06-30 03:58:20,000 loglevel=ERROR  logger=uvicorn.error run_asgi() L369  Exception in ASGI application
+Traceback (most recent call last):
+  File "/Users/adinanibijiang/opt/anaconda3/lib/python3.8/site-packages/anyio/streams/memory.py", line 94, in receive
+    return self.receive_nowait()
+  File "/Users/adinanibijiang/opt/anaconda3/lib/python3.8/site-packages/anyio/streams/memory.py", line 89, in receive_nowait
+    raise WouldBlock
+anyio.WouldBlock
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/adinanibijiang/opt/anaconda3/lib/python3.8/site-packages/starlette/middleware/base.py", line 43, in call_next
+    message = await recv_stream.receive()
+  File "/Users/adinanibijiang/opt/anaconda3/lib/python3.8/site-packages/anyio/streams/memory.py", line 114, in receive
+    raise EndOfStream
+anyio.EndOfStream
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/adinanibijiang/opt/anaconda3/lib/python3.8/site-packages/uvicorn/protocols/http/h11_impl.py", line 366, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "/Users/adinanibijiang/opt/anaconda3/lib/python3.8/site-packages/uvicorn/middleware/proxy_headers.py", line 75, in __call__
+    return await self.app(scope, receive, send)
+  File "/Users/adinanibijiang/opt/anaconda3/lib/python3.8/site-packages/fastapi/applications.py", line 269, in __call__
+    await super().__call__(scope, receive, send)
+  File "/Users/adinanibijiang/opt/anaconda3/lib/python3.8/site-packages/starlette/applications.py", line 124, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/adinanibijiang/opt/anaconda3/lib/python3.8/site-packages/starlette/middleware/errors.py", line 184, in __call__
+    raise exc
+  File "/Users/adinanibijiang/opt/anaconda3/lib/python3.8/site-packages/starlette/middleware/errors.py", line 162, in __call__
+    await self.app(scope, receive, _send)
+  File "/Users/adinanibijiang/opt/anaconda3/lib/python3.8/site-packages/starlette/middleware/base.py", line 68, in __call__
+    response = await self.dispatch_func(request, call_next)
+  File "./main.py", line 92, in log_requests
+    response = await call_next(request)
+  File "/Users/adinanibijiang/opt/anaconda3/lib/python3.8/site-packages/starlette/middleware/base.py", line 46, in call_next
+    raise app_exc
+  File "/Users/adinanibijiang/opt/anaconda3/lib/python3.8/site-packages/starlette/middleware/base.py", line 36, in coro
+    await self.app(scope, request.receive, send_stream.send)
+  File "/Users/adinanibijiang/opt/anaconda3/lib/python3.8/site-packages/starlette/exceptions.py", line 93, in __call__
+    raise exc
+  File "/Users/adinanibijiang/opt/anaconda3/lib/python3.8/site-packages/starlette/exceptions.py", line 82, in __call__
+    await self.app(scope, receive, sender)
+  File "/Users/adinanibijiang/opt/anaconda3/lib/python3.8/site-packages/fastapi/middleware/asyncexitstack.py", line 21, in __call__
+    raise e
+  File "/Users/adinanibijiang/opt/anaconda3/lib/python3.8/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/Users/adinanibijiang/opt/anaconda3/lib/python3.8/site-packages/starlette/routing.py", line 670, in __call__
+    await route.handle(scope, receive, send)
+  File "/Users/adinanibijiang/opt/anaconda3/lib/python3.8/site-packages/starlette/routing.py", line 266, in handle
+    await self.app(scope, receive, send)
+  File "/Users/adinanibijiang/opt/anaconda3/lib/python3.8/site-packages/starlette/routing.py", line 65, in app
+    response = await func(request)
+  File "/Users/adinanibijiang/opt/anaconda3/lib/python3.8/site-packages/fastapi/routing.py", line 227, in app
+    raw_response = await run_endpoint_function(
+  File "/Users/adinanibijiang/opt/anaconda3/lib/python3.8/site-packages/fastapi/routing.py", line 160, in run_endpoint_function
+    return await dependant.call(**values)
+  File "./main.py", line 71, in generate_token
+    user = await services.authenticate_user(db,form_data.username, form_data.password)
+  File "./services.py", line 40, in authenticate_user
+    if not sha256_crypt.verify(hash, models.User.hashed_password):
+  File "/Users/adinanibijiang/opt/anaconda3/lib/python3.8/site-packages/passlib/utils/handlers.py", line 788, in verify
+    self = cls.from_string(hash, **context)
+  File "/Users/adinanibijiang/opt/anaconda3/lib/python3.8/site-packages/passlib/handlers/sha2_crypt.py", line 304, in from_string
+    hash = to_unicode(hash, "ascii", "hash")
+  File "/Users/adinanibijiang/opt/anaconda3/lib/python3.8/site-packages/passlib/utils/__init__.py", line 764, in to_unicode
+    raise ExpectedStringError(source, param)
+TypeError: hash must be unicode or bytes, not sqlalchemy.orm.attributes.InstrumentedAttribute
+2022-06-30 04:00:08,756 loglevel=INFO   logger=uvicorn.error shutdown() L252  Shutting down
+2022-06-30 04:00:08,863 loglevel=INFO   logger=uvicorn.error shutdown() L64   Waiting for application shutdown.
+2022-06-30 04:00:08,864 loglevel=INFO   logger=uvicorn.error shutdown() L75   Application shutdown complete.
+2022-06-30 04:00:08,864 loglevel=INFO   logger=uvicorn.error serve() L85   Finished server process [83707]
+2022-06-30 04:00:11,020 loglevel=INFO   logger=uvicorn.error serve() L75   Started server process [83771]
+2022-06-30 04:00:11,021 loglevel=INFO   logger=uvicorn.error startup() L45   Waiting for application startup.
+2022-06-30 04:00:11,021 loglevel=INFO   logger=uvicorn.error startup() L59   Application startup complete.
+2022-06-30 04:00:12,062 loglevel=INFO   logger=main log_requests() L89   rid=H14T46 start request path=/docs
+2022-06-30 04:00:12,065 loglevel=INFO   logger=main log_requests() L96   rid=H14T46 completed_in=1.41ms status_code=200
+2022-06-30 04:00:12,200 loglevel=INFO   logger=main log_requests() L89   rid=NSRJ7Y start request path=/openapi.json
+2022-06-30 04:00:12,221 loglevel=INFO   logger=main log_requests() L96   rid=NSRJ7Y completed_in=21.60ms status_code=200
+2022-06-30 04:00:22,951 loglevel=INFO   logger=main log_requests() L89   rid=BJMLJ5 start request path=/token
+2022-06-30 04:00:22,984 loglevel=ERROR  logger=uvicorn.error run_asgi() L369  Exception in ASGI application
+Traceback (most recent call last):
+  File "/Users/adinanibijiang/opt/anaconda3/lib/python3.8/site-packages/anyio/streams/memory.py", line 94, in receive
+    return self.receive_nowait()
+  File "/Users/adinanibijiang/opt/anaconda3/lib/python3.8/site-packages/anyio/streams/memory.py", line 89, in receive_nowait
+    raise WouldBlock
+anyio.WouldBlock
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/adinanibijiang/opt/anaconda3/lib/python3.8/site-packages/starlette/middleware/base.py", line 43, in call_next
+    message = await recv_stream.receive()
+  File "/Users/adinanibijiang/opt/anaconda3/lib/python3.8/site-packages/anyio/streams/memory.py", line 114, in receive
+    raise EndOfStream
+anyio.EndOfStream
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/adinanibijiang/opt/anaconda3/lib/python3.8/site-packages/uvicorn/protocols/http/h11_impl.py", line 366, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "/Users/adinanibijiang/opt/anaconda3/lib/python3.8/site-packages/uvicorn/middleware/proxy_headers.py", line 75, in __call__
+    return await self.app(scope, receive, send)
+  File "/Users/adinanibijiang/opt/anaconda3/lib/python3.8/site-packages/fastapi/applications.py", line 269, in __call__
+    await super().__call__(scope, receive, send)
+  File "/Users/adinanibijiang/opt/anaconda3/lib/python3.8/site-packages/starlette/applications.py", line 124, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/adinanibijiang/opt/anaconda3/lib/python3.8/site-packages/starlette/middleware/errors.py", line 184, in __call__
+    raise exc
+  File "/Users/adinanibijiang/opt/anaconda3/lib/python3.8/site-packages/starlette/middleware/errors.py", line 162, in __call__
+    await self.app(scope, receive, _send)
+  File "/Users/adinanibijiang/opt/anaconda3/lib/python3.8/site-packages/starlette/middleware/base.py", line 68, in __call__
+    response = await self.dispatch_func(request, call_next)
+  File "./main.py", line 92, in log_requests
+    response = await call_next(request)
+  File "/Users/adinanibijiang/opt/anaconda3/lib/python3.8/site-packages/starlette/middleware/base.py", line 46, in call_next
+    raise app_exc
+  File "/Users/adinanibijiang/opt/anaconda3/lib/python3.8/site-packages/starlette/middleware/base.py", line 36, in coro
+    await self.app(scope, request.receive, send_stream.send)
+  File "/Users/adinanibijiang/opt/anaconda3/lib/python3.8/site-packages/starlette/exceptions.py", line 93, in __call__
+    raise exc
+  File "/Users/adinanibijiang/opt/anaconda3/lib/python3.8/site-packages/starlette/exceptions.py", line 82, in __call__
+    await self.app(scope, receive, sender)
+  File "/Users/adinanibijiang/opt/anaconda3/lib/python3.8/site-packages/fastapi/middleware/asyncexitstack.py", line 21, in __call__
+    raise e
+  File "/Users/adinanibijiang/opt/anaconda3/lib/python3.8/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/Users/adinanibijiang/opt/anaconda3/lib/python3.8/site-packages/starlette/routing.py", line 670, in __call__
+    await route.handle(scope, receive, send)
+  File "/Users/adinanibijiang/opt/anaconda3/lib/python3.8/site-packages/starlette/routing.py", line 266, in handle
+    await self.app(scope, receive, send)
+  File "/Users/adinanibijiang/opt/anaconda3/lib/python3.8/site-packages/starlette/routing.py", line 65, in app
+    response = await func(request)
+  File "/Users/adinanibijiang/opt/anaconda3/lib/python3.8/site-packages/fastapi/routing.py", line 227, in app
+    raw_response = await run_endpoint_function(
+  File "/Users/adinanibijiang/opt/anaconda3/lib/python3.8/site-packages/fastapi/routing.py", line 160, in run_endpoint_function
+    return await dependant.call(**values)
+  File "./main.py", line 71, in generate_token
+    user = await services.authenticate_user(db,form_data.username, form_data.password)
+  File "./services.py", line 39, in authenticate_user
+    hash = sha256_crypt.encrypt(models.User.hashed_password)
+  File "/Users/adinanibijiang/opt/anaconda3/lib/python3.8/site-packages/passlib/utils/decor.py", line 191, in wrapper
+    return func(*args, **kwds)
+  File "/Users/adinanibijiang/opt/anaconda3/lib/python3.8/site-packages/passlib/ifc.py", line 154, in encrypt
+    return cls.hash(*args, **kwds)
+  File "/Users/adinanibijiang/opt/anaconda3/lib/python3.8/site-packages/passlib/utils/handlers.py", line 777, in hash
+    validate_secret(secret)
+  File "/Users/adinanibijiang/opt/anaconda3/lib/python3.8/site-packages/passlib/utils/handlers.py", line 122, in validate_secret
+    raise exc.ExpectedStringError(secret, "secret")
+TypeError: secret must be unicode or bytes, not sqlalchemy.orm.attributes.InstrumentedAttribute
+2022-06-30 04:07:55,323 loglevel=INFO   logger=uvicorn.error shutdown() L252  Shutting down
+2022-06-30 04:07:55,426 loglevel=INFO   logger=uvicorn.error shutdown() L64   Waiting for application shutdown.
+2022-06-30 04:07:55,427 loglevel=INFO   logger=uvicorn.error shutdown() L75   Application shutdown complete.
+2022-06-30 04:07:55,427 loglevel=INFO   logger=uvicorn.error serve() L85   Finished server process [83771]
+2022-06-30 04:07:57,928 loglevel=INFO   logger=uvicorn.error serve() L75   Started server process [83978]
+2022-06-30 04:07:57,929 loglevel=INFO   logger=uvicorn.error startup() L45   Waiting for application startup.
+2022-06-30 04:07:57,929 loglevel=INFO   logger=uvicorn.error startup() L59   Application startup complete.
+2022-06-30 04:08:01,795 loglevel=INFO   logger=main log_requests() L89   rid=H6TY2E start request path=/docs
+2022-06-30 04:08:01,803 loglevel=INFO   logger=main log_requests() L96   rid=H6TY2E completed_in=6.56ms status_code=200
+2022-06-30 04:08:02,048 loglevel=INFO   logger=main log_requests() L89   rid=UTLUN4 start request path=/openapi.json
+2022-06-30 04:08:02,085 loglevel=INFO   logger=main log_requests() L96   rid=UTLUN4 completed_in=36.74ms status_code=200
+2022-06-30 04:08:17,278 loglevel=INFO   logger=main log_requests() L89   rid=RS2USF start request path=/token
+2022-06-30 04:08:17,633 loglevel=ERROR  logger=uvicorn.error run_asgi() L369  Exception in ASGI application
+Traceback (most recent call last):
+  File "/Users/adinanibijiang/opt/anaconda3/lib/python3.8/site-packages/anyio/streams/memory.py", line 94, in receive
+    return self.receive_nowait()
+  File "/Users/adinanibijiang/opt/anaconda3/lib/python3.8/site-packages/anyio/streams/memory.py", line 89, in receive_nowait
+    raise WouldBlock
+anyio.WouldBlock
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/adinanibijiang/opt/anaconda3/lib/python3.8/site-packages/starlette/middleware/base.py", line 43, in call_next
+    message = await recv_stream.receive()
+  File "/Users/adinanibijiang/opt/anaconda3/lib/python3.8/site-packages/anyio/streams/memory.py", line 114, in receive
+    raise EndOfStream
+anyio.EndOfStream
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/adinanibijiang/opt/anaconda3/lib/python3.8/site-packages/uvicorn/protocols/http/h11_impl.py", line 366, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "/Users/adinanibijiang/opt/anaconda3/lib/python3.8/site-packages/uvicorn/middleware/proxy_headers.py", line 75, in __call__
+    return await self.app(scope, receive, send)
+  File "/Users/adinanibijiang/opt/anaconda3/lib/python3.8/site-packages/fastapi/applications.py", line 269, in __call__
+    await super().__call__(scope, receive, send)
+  File "/Users/adinanibijiang/opt/anaconda3/lib/python3.8/site-packages/starlette/applications.py", line 124, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/adinanibijiang/opt/anaconda3/lib/python3.8/site-packages/starlette/middleware/errors.py", line 184, in __call__
+    raise exc
+  File "/Users/adinanibijiang/opt/anaconda3/lib/python3.8/site-packages/starlette/middleware/errors.py", line 162, in __call__
+    await self.app(scope, receive, _send)
+  File "/Users/adinanibijiang/opt/anaconda3/lib/python3.8/site-packages/starlette/middleware/base.py", line 68, in __call__
+    response = await self.dispatch_func(request, call_next)
+  File "./main.py", line 92, in log_requests
+    response = await call_next(request)
+  File "/Users/adinanibijiang/opt/anaconda3/lib/python3.8/site-packages/starlette/middleware/base.py", line 46, in call_next
+    raise app_exc
+  File "/Users/adinanibijiang/opt/anaconda3/lib/python3.8/site-packages/starlette/middleware/base.py", line 36, in coro
+    await self.app(scope, request.receive, send_stream.send)
+  File "/Users/adinanibijiang/opt/anaconda3/lib/python3.8/site-packages/starlette/exceptions.py", line 93, in __call__
+    raise exc
+  File "/Users/adinanibijiang/opt/anaconda3/lib/python3.8/site-packages/starlette/exceptions.py", line 82, in __call__
+    await self.app(scope, receive, sender)
+  File "/Users/adinanibijiang/opt/anaconda3/lib/python3.8/site-packages/fastapi/middleware/asyncexitstack.py", line 21, in __call__
+    raise e
+  File "/Users/adinanibijiang/opt/anaconda3/lib/python3.8/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/Users/adinanibijiang/opt/anaconda3/lib/python3.8/site-packages/starlette/routing.py", line 670, in __call__
+    await route.handle(scope, receive, send)
+  File "/Users/adinanibijiang/opt/anaconda3/lib/python3.8/site-packages/starlette/routing.py", line 266, in handle
+    await self.app(scope, receive, send)
+  File "/Users/adinanibijiang/opt/anaconda3/lib/python3.8/site-packages/starlette/routing.py", line 65, in app
+    response = await func(request)
+  File "/Users/adinanibijiang/opt/anaconda3/lib/python3.8/site-packages/fastapi/routing.py", line 227, in app
+    raw_response = await run_endpoint_function(
+  File "/Users/adinanibijiang/opt/anaconda3/lib/python3.8/site-packages/fastapi/routing.py", line 160, in run_endpoint_function
+    return await dependant.call(**values)
+  File "./main.py", line 71, in generate_token
+    user = await services.authenticate_user(db,form_data.username, form_data.password)
+TypeError: object User can't be used in 'await' expression
+2022-06-30 04:08:58,854 loglevel=INFO   logger=uvicorn.error shutdown() L252  Shutting down
+2022-06-30 04:08:58,960 loglevel=INFO   logger=uvicorn.error shutdown() L64   Waiting for application shutdown.
+2022-06-30 04:08:58,961 loglevel=INFO   logger=uvicorn.error shutdown() L75   Application shutdown complete.
+2022-06-30 04:08:58,961 loglevel=INFO   logger=uvicorn.error serve() L85   Finished server process [83978]
+2022-06-30 04:09:01,207 loglevel=INFO   logger=uvicorn.error serve() L75   Started server process [84025]
+2022-06-30 04:09:01,207 loglevel=INFO   logger=uvicorn.error startup() L45   Waiting for application startup.
+2022-06-30 04:09:01,207 loglevel=INFO   logger=uvicorn.error startup() L59   Application startup complete.
+2022-06-30 04:11:17,043 loglevel=INFO   logger=uvicorn.error shutdown() L252  Shutting down
+2022-06-30 04:11:17,146 loglevel=INFO   logger=uvicorn.error shutdown() L64   Waiting for application shutdown.
+2022-06-30 04:11:17,147 loglevel=INFO   logger=uvicorn.error shutdown() L75   Application shutdown complete.
+2022-06-30 04:11:17,147 loglevel=INFO   logger=uvicorn.error serve() L85   Finished server process [84025]
+2022-06-30 04:11:19,301 loglevel=INFO   logger=uvicorn.error serve() L75   Started server process [84112]
+2022-06-30 04:11:19,301 loglevel=INFO   logger=uvicorn.error startup() L45   Waiting for application startup.
+2022-06-30 04:11:19,301 loglevel=INFO   logger=uvicorn.error startup() L59   Application startup complete.
+2022-06-30 04:11:51,517 loglevel=INFO   logger=uvicorn.error shutdown() L252  Shutting down
+2022-06-30 04:11:51,621 loglevel=INFO   logger=uvicorn.error shutdown() L64   Waiting for application shutdown.
+2022-06-30 04:11:51,626 loglevel=INFO   logger=uvicorn.error shutdown() L75   Application shutdown complete.
+2022-06-30 04:11:51,628 loglevel=INFO   logger=uvicorn.error serve() L85   Finished server process [84112]
+2022-06-30 04:11:53,831 loglevel=INFO   logger=uvicorn.error serve() L75   Started server process [84140]
+2022-06-30 04:11:53,831 loglevel=INFO   logger=uvicorn.error startup() L45   Waiting for application startup.
+2022-06-30 04:11:53,832 loglevel=INFO   logger=uvicorn.error startup() L59   Application startup complete.
+2022-06-30 04:12:19,848 loglevel=INFO   logger=uvicorn.error shutdown() L252  Shutting down
+2022-06-30 04:12:19,951 loglevel=INFO   logger=uvicorn.error shutdown() L64   Waiting for application shutdown.
+2022-06-30 04:12:19,952 loglevel=INFO   logger=uvicorn.error shutdown() L75   Application shutdown complete.
+2022-06-30 04:12:19,952 loglevel=INFO   logger=uvicorn.error serve() L85   Finished server process [84140]
+2022-06-30 04:12:22,069 loglevel=INFO   logger=uvicorn.error serve() L75   Started server process [84163]
+2022-06-30 04:12:22,069 loglevel=INFO   logger=uvicorn.error startup() L45   Waiting for application startup.
+2022-06-30 04:12:22,069 loglevel=INFO   logger=uvicorn.error startup() L59   Application startup complete.
+2022-06-30 04:12:27,545 loglevel=INFO   logger=main log_requests() L82   rid=WOY9CC start request path=/docs
+2022-06-30 04:12:27,548 loglevel=INFO   logger=main log_requests() L89   rid=WOY9CC completed_in=1.76ms status_code=200
+2022-06-30 04:12:27,688 loglevel=INFO   logger=main log_requests() L82   rid=XNKIV0 start request path=/openapi.json
+2022-06-30 04:12:27,710 loglevel=INFO   logger=main log_requests() L89   rid=XNKIV0 completed_in=21.84ms status_code=200
+2022-06-30 04:15:59,809 loglevel=INFO   logger=uvicorn.error shutdown() L252  Shutting down
+2022-06-30 04:15:59,915 loglevel=INFO   logger=uvicorn.error shutdown() L64   Waiting for application shutdown.
+2022-06-30 04:15:59,916 loglevel=INFO   logger=uvicorn.error shutdown() L75   Application shutdown complete.
+2022-06-30 04:15:59,916 loglevel=INFO   logger=uvicorn.error serve() L85   Finished server process [84163]
+2022-06-30 04:16:02,170 loglevel=INFO   logger=uvicorn.error serve() L75   Started server process [84251]
+2022-06-30 04:16:02,171 loglevel=INFO   logger=uvicorn.error startup() L45   Waiting for application startup.
+2022-06-30 04:16:02,171 loglevel=INFO   logger=uvicorn.error startup() L59   Application startup complete.
+2022-06-30 04:16:32,763 loglevel=INFO   logger=uvicorn.error shutdown() L252  Shutting down
+2022-06-30 04:16:32,866 loglevel=INFO   logger=uvicorn.error shutdown() L64   Waiting for application shutdown.
+2022-06-30 04:16:32,876 loglevel=INFO   logger=uvicorn.error shutdown() L75   Application shutdown complete.
+2022-06-30 04:16:32,877 loglevel=INFO   logger=uvicorn.error serve() L85   Finished server process [84251]
+2022-06-30 04:16:34,997 loglevel=INFO   logger=uvicorn.error serve() L75   Started server process [84280]
+2022-06-30 04:16:34,997 loglevel=INFO   logger=uvicorn.error startup() L45   Waiting for application startup.
+2022-06-30 04:16:34,998 loglevel=INFO   logger=uvicorn.error startup() L59   Application startup complete.
+2022-06-30 04:16:43,406 loglevel=INFO   logger=uvicorn.error shutdown() L252  Shutting down
+2022-06-30 04:16:43,508 loglevel=INFO   logger=uvicorn.error shutdown() L64   Waiting for application shutdown.
+2022-06-30 04:16:43,509 loglevel=INFO   logger=uvicorn.error shutdown() L75   Application shutdown complete.
+2022-06-30 04:16:43,509 loglevel=INFO   logger=uvicorn.error serve() L85   Finished server process [84280]
